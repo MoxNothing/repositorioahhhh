@@ -1,76 +1,72 @@
-print('Bienvenido a la Aplicacion de Colecciones de Musica')
-
 musica = []
 
 def muestra():
-    for musica in musica: 
-        print('autor: ', musica['autor'])
-        print('album: ', musica['album'])
-        print('cantante: ', musica['cantante'])
-        print('nombre: ', musica['nombre'])
-        print('ano: '), musica['ano']
-
-def a_musica():
+    for music in musica:
+        print('autor:', music['autor'])
+        print('album:', music['album'])
+        print('cantante:', music['cantante'])
+        print('nombre :', music['nombre '])
+        print('ano:', music['ano'])
         
-    musica={}
-    
-    musica['autor'] = input('digita el autor: ')
-    musica['album'] = input('digita el album: ')
-    musica['cantante'] = input('digita el cantante: ')
-    musica['nombre'] = input('digita el nombre: ')
-    musica['ano'] = input('digita el ano: ')
 
-    musica.append(musica)
+def agrega():
+    music = {}
+    music['autor'] = input('ingresa autor: ')
+    music['album'] = input('ingresa album: ')
+    music['cantante'] = input('ingresa cantante : ')
+    music['nombre '] = input('ingresa nombre : ')
+    music['ano'] = input('ingresa ano : ')
+    musica.append(music)
     print('la cancion a sido agregada correctamente')
     
 
 def actualiza():
-    menu = int(input('ingresa la actualizacion de la musica'))
-    if menu >= 0 and musica < len(musica):
-        musica = musica[menu]
-        musica['autor'] = input('ingresa autor :')
-        musica['album'] = input('ingresa album :')
-        musica['cantante'] = input('ingresa cantante :')
-        musica['nombre'] = input('ingresa nombre :')
-        musica['ano'] = input('ingresa ano :')
+    menu = int(input('ingresa la actualizacion de la musica : '))
+    if menu >= 0 and menu < len(musica):
+        music = musica[menu]
+        music['autor'] = input('ingresa autor : ')
+        music['album'] = input('ingresa album : ')
+        music['cantante'] = input('ingresa cantante : ')
+        music['nombre'] = input('ingresa nombre : ')
+        music['ano'] = input('ingresa ano : ')
         print('la cancion ha sido actualizada')
+        
     else:
-        print('menu invalidado')
+        print('menu invalido')
 
-def eliminar():
-    menu = int(input('ingresa la cancion a eliminar : '))
+def elimina():
+    menu = int(input('ingresa la cancion a eliminar :'))
     if menu >= 0 and menu < len(musica):
         del musica[menu]
-        print('elimnar musica')
+        print('eliminar musica')
+        
     else:
-        print('en el menu la cancion no existe')
+        print('en el menu de canciones no existe')
 
 def limpia():
     musica.clear()
     print('limpieza de canciones realizada')
+    
 
 while True:
-    print("1. nueva musica")
-    print("2. agregar musica")
-    print("3. actualizar musica")
-    print("4. eliminar musica")
-    print("5. limpiar musicas")
-    print("6. salir")
-
-    eleccion = int(input("Entrar eleccion:"))
+    print('1. ver musica')
+    print('2. agregar musica')
+    print('3. actualizar musica')
+    print('4. eliminar musica')
+    print('5. limpiar musica')
+    print('6. salir')
+    eleccion = int(input('ingresa eleccion: '))
     if eleccion == 1:
         muestra()
     elif eleccion == 2:
-        a_musica()
+        agrega()
     elif eleccion == 3:
         actualiza()
     elif eleccion == 4:
-        eliminar()
+        elimina()
     elif eleccion == 5:
         limpia()
     elif eleccion == 6:
         break
     else:
-        print("Eleccion invalida")
-
-        
+        print('Eleccion invalida')
