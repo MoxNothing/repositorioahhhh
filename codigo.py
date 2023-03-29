@@ -8,7 +8,7 @@ def muestra():
         print('album: ', musica['album'])
         print('cantante: ', musica['cantante'])
         print('nombre: ', musica['nombre'])
-        print('ano: '), musica['ano'])
+        print('ano: '), musica['ano']
 
 def a_musica():
         
@@ -26,7 +26,7 @@ def a_musica():
 
 def actualiza():
     menu = int(input('ingresa la actualizacion de la musica'))
-    if menu >= 0 and index < len(musica):
+    if menu >= 0 and musica < len(musica):
         musica = musica[menu]
         musica['autor'] = input('ingresa autor :')
         musica['album'] = input('ingresa album :')
@@ -49,5 +49,28 @@ def limpia():
     musica.clear()
     print('limpieza de canciones realizada')
 
+while True:
+    print("1. nueva musica")
+    print("2. agregar musica")
+    print("3. actualizar musica")
+    print("4. eliminar musica")
+    print("5. limpiar musicas")
+    print("6. salir")
+
+    eleccion = int(input("Entrar eleccion:"))
+    if eleccion == 1:
+        muestra()
+    elif eleccion == 2:
+        a_musica()
+    elif eleccion == 3:
+        actualiza()
+    elif eleccion == 4:
+        eliminar()
+    elif eleccion == 5:
+        limpia()
+    elif eleccion == 6:
+        break
+    else:
+        print("Eleccion invalida")
 
         
